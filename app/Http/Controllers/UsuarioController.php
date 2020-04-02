@@ -31,4 +31,5 @@ class UsuarioController extends Controller
         }
         return view('resultado',['mensagem'=> $msg]);
     }
+
 }

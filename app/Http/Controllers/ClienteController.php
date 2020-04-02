@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Usuario\Usuario;
 use Illuminate\Http\Request;
 use App\Cliente\Cliente;
 
@@ -12,8 +13,15 @@ class ClienteController extends Controller
         return view('cadastro/cadastro_cliente');
     }
 
-    function cadastrarCliente(Request $req)
+    function cadastrarCliente(Request $req, $id = null)
     {
+        /* verifica se é alteração ou cadastro */
+        if (isset($id)){
+            $tipo = 'Alterado';
+        }else{
+            $tipo = 'Cadastrado';
+        }
+
         $nome = $req->input('nome');
         $endereco = $req->input('endereco');
         $cep = $req->input('cep');
@@ -21,23 +29,45 @@ class ClienteController extends Controller
         $estado = $req->input('estado');
 
         $cliente = new Cliente();
+
+        /* Se for alteração efetua a alteração */
+        if ($tipo == 'Alterado'){
+            $cliente = $cliente->find($id);
+        }
+
         $cliente->nome = $nome;
         $cliente->endereco = $endereco;
         $cliente->cep = $cep;
         $cliente->cidade = $cidade;
         $cliente->estado = $estado;
         if ($cliente->save()){
-            $msg = 'Cliente '.$cliente->nome.' Criado com sucesso!';
+            $msg =  [ 'msg'=>'Cliente '.$cliente->nome.' '.$tipo.' com sucesso!', true];
         }else{
-            $msg ='Cliente não foi cadastrado';
+            $msg = ['msg'=>'Cliente não foi cadastrado', false];
         }
-        return view('resultado',['mensagem'=> $msg]);
+        return $this->ListarClientes($msg);
     }
 
-    function ListarClientes(){
+    function ListarClientes($msg = null){
         $cliente = new Cliente();
         $clientes = $cliente::all();
 
-        return view('lista',['clientes'=> $clientes]);
+        return view('lista',['clientes'=> $clientes, 'msg'=> $msg]);
+    }
+
+    function alteraCliente($id){
+        $cliente = Cliente::find($id);
+        return view('altera_cliente',['cli' => $cliente]);
+    }
+
+    function excluirCliente($id)
+    {
+        $cliente = Cliente::find($id)->delete();
+        if ($cliente){
+            $msg = ['msg'=>'Cliente excluído com sucesso', true];
+        }else{
+            $msg = ['msg'=>'Erro ao excluir cliente', false];
+        }
+        return $this->ListarClientes($msg);
     }
 }
