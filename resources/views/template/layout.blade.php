@@ -18,7 +18,7 @@
         <div class="container-fluid">
             <div class="row">
                 <nav class="navbar navbar-expand-sm bg-light navbar-light w-100">
-                    <a class="navbar-brand text-success" href="#"> <span class="h1">PW </span><i class="fas fa-terminal fa-2x"></i></a>
+                    <a class="navbar-brand text-success" href="#"> <span class="h5">PW </span><i class="fas fa-terminal "></i></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -27,13 +27,11 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{@route('cad_cliente')}}"><i class="fas fa-user-astronaut fa-2x text-success"></i> Cadastro de Clientes</a>
+                                <a class="nav-link" href="{{@route('cad_usuario')}}"><i class="fas fa-user-plus  text-success"></i> Usuários</a>
                             </li>
+                            <li class="nav-item"> <a class="nav-link">|</a></li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{@route('cad_usuario')}}"><i class="fas fa-user-plus fa-2x text-success"></i> Cadastro de Usuários</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{@route('listar')}}"><i class="fab fa-steam fa-2x text-success"></i> Lista de Clientes</a>
+                                <a class="nav-link" href="{{@route('listar')}}"><i class="fas fa-user-astronaut  text-success"></i> Clientes</a>
                             </li>
                         </ul>
                     </div>

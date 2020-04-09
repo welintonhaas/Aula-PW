@@ -39,13 +39,13 @@
                     <td>{{$cliente->cep}}</td>
                     <td>{{$cliente->cidade}}</td>
                     <td>{{$cliente->estado}}</td>
-                    <td><a class="btn btn-primary" href="{{route('altera_cli',['id'=>$cliente->id])}}">Alterar</a>
-                        <button class="btn btn-danger" onclick="exclui({{ $cliente->id }})" >Excluir</button></td>
+                    <td><a class="btn btn-primary" href="{{route('altera_cli',['id'=>$cliente->id])}}"><i class="fas fa-pencil-alt"></i> Alterar</a>
+                        <button class="btn btn-danger" onclick="exclui({{ $cliente->id }})"><i class="fas fa-trash-alt"></i> Excluir</button></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-        <a class="btn btn-success" href="{{route('cad_cliente')}}">Cadastrar</a>
+        <a class="btn btn-success" href="{{route('cad_cliente')}}"><i class="fas fa-plus"></i> Cadastrar</a>
         @endisset
     </div>
 
