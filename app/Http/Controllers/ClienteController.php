@@ -10,7 +10,10 @@ class ClienteController extends Controller
 {
     function telaCadastro()
     {
-        return view('cliente/cadastro_cliente');
+        if (session()->has('login')){
+            return view('cliente/cadastro_cliente');
+        }
+        return redirect()->route('login');
     }
 
     function cadastrarCliente(Request $req, $id = null)

@@ -10,7 +10,7 @@
         <!-- Card -->
         <div class="card">
             <div class="card-header">
-                Cadastro de novo usuário
+                Cadastre-se para ter acesso a todas funcionalidades
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">

@@ -3,7 +3,14 @@
 use Illuminate\Support\Facades\Route;
 
 /* Página Inicial */
-Route::get('/', 'ClienteController@ListarClientes');
+Route::get('/', function () {
+    return view('index');
+});
+
+/* Páginas Login */
+Route::get('/login', 'AppController@login')->name('login');
+Route::get('/logout', 'AppController@logout')->name('logout');
+Route::post('/logar', 'AppController@logar')->name('logar');
 
 /* Páginas Usuário */
 Route::get('/usuario/cadastra', 'UsuarioController@telaCadastro')->name('cad_usuario');

@@ -18,7 +18,7 @@
         <div class="container-fluid">
             <div class="row">
                 <nav class="navbar navbar-expand-sm bg-light navbar-light w-100">
-                    <a class="navbar-brand text-success" href="#"> <span class="h5">PW </span><i class="fas fa-terminal "></i></a>
+                    <a class="navbar-brand text-success" href="/"> <span class="h5">PW </span><i class="fas fa-terminal"></i></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -37,8 +37,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ @route('listar_vend') }}"><i class="fas fa-funnel-dollar text-success"></i> Vendas</a>
                             </li>
+
+
                         </ul>
+
                     </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        @if (session()->has('login'))
+                            <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"><i class="fas fa-sign-in-alt"></i> Logout</a></li>
+                        @else
+                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-user"></i> Logar</a></li>
+                        @endif
+                    </ul>
 
                 </nav>
             </div>

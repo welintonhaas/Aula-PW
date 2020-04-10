@@ -11,8 +11,11 @@ class VendaController extends Controller
 {
     function telaCadastro()
     {
-        $clientes = Cliente::all();
-        return view('venda/cadastro_venda', ['clientes' => $clientes]);
+        if (session()->has('login')) {
+            $clientes = Cliente::all();
+            return view('venda/cadastro_venda', ['clientes' => $clientes]);
+        }
+        return redirect()->route('login');
     }
 
     function cadastrarVenda(Request $req, $id = null)
