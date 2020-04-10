@@ -2,26 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/* Página Inicial */
+Route::get('/', 'ClienteController@ListarClientes');
 
-Route::get('/', 'UsuarioController@telaCadastro');
-
-Route::get('/usuario/cadastro', 'UsuarioController@telaCadastro')->name('cad_usuario');
+/* Páginas Usuário */
+Route::get('/usuario/cadastra', 'UsuarioController@telaCadastro')->name('cad_usuario');
 Route::post('/usuario/cadastrar', 'UsuarioController@cadastrarUsuario')->name('cadastra_usu');
 
-Route::get('/cliente/cadastro', 'ClienteController@telaCadastro')->name('cad_cliente');
+/* Páginas Cliente */
+Route::get('/cliente/cadastra', 'ClienteController@telaCadastro')->name('cad_cliente');
 Route::post('/cliente/cadastrar', 'ClienteController@cadastrarCliente')->name('cadastra_cli');
 Route::get('/cliente/altera/{id}', 'ClienteController@alteraCliente')->name('altera_cli');
 Route::post('/cliente/alterar/{id}', 'ClienteController@cadastrarCliente')->name('alterar_cli');
 Route::get('/cliente/excluir/{id}', 'ClienteController@excluirCliente')->name('excluir_cli');
+Route::get('/cliente/listar', 'ClienteController@ListarClientes')->name('listar_cli');
 
-Route::get('/cliente/listar', 'ClienteController@ListarClientes')->name('listar');
+/* Páginas Venda */
+Route::get('/venda/cadastra', 'VendaController@telaCadastro')->name('cad_vend');
+Route::post('/venda/cadastrar', 'VendaController@cadastrarVenda')->name('cadastra_vend');
+Route::get('/venda/excluir/{id}', 'VendaController@excluirVenda')->name('excluir_vend');
+Route::get('/venda/listar', 'VendaController@ListarVendas')->name('listar_vend');

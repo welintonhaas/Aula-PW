@@ -10,12 +10,12 @@ class ClienteController extends Controller
 {
     function telaCadastro()
     {
-        return view('cadastro/cadastro_cliente');
+        return view('cliente/cadastro_cliente');
     }
 
     function cadastrarCliente(Request $req, $id = null)
     {
-        /* verifica se é alteração ou cadastro */
+        /* verifica se é alteração ou cadastra */
         if (isset($id)){
             $tipo = 'Alterado';
         }else{
@@ -52,12 +52,12 @@ class ClienteController extends Controller
         $cliente = new Cliente();
         $clientes = $cliente::all();
 
-        return view('lista',['clientes'=> $clientes, 'msg'=> $msg]);
+        return view('cliente/lista_cliente',['clientes'=> $clientes, 'msg'=> $msg]);
     }
 
     function alteraCliente($id){
         $cliente = Cliente::find($id);
-        return view('altera_cliente',['cli' => $cliente]);
+        return view('cliente/altera_cliente',['cli' => $cliente]);
     }
 
     function excluirCliente($id)

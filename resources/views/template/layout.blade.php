@@ -27,11 +27,15 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{@route('cad_usuario')}}"><i class="fas fa-user-plus  text-success"></i> Usuários</a>
+                                <a class="nav-link" href="{{ @route('cad_usuario') }}"><i class="fas fa-user-plus  text-success"></i> Usuários</a>
                             </li>
                             <li class="nav-item"> <a class="nav-link">|</a></li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{@route('listar')}}"><i class="fas fa-user-astronaut  text-success"></i> Clientes</a>
+                                <a class="nav-link" href="{{ @route('listar_cli') }}"><i class="fas fa-user-astronaut  text-success"></i> Clientes</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link">|</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ @route('listar_vend') }}"><i class="fas fa-funnel-dollar text-success"></i> Vendas</a>
                             </li>
                         </ul>
                     </div>

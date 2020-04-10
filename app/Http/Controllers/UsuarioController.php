@@ -10,7 +10,7 @@ class UsuarioController extends Controller
 {
     function telaCadastro()
     {
-        return view('cadastro/cadastro_usuario');
+        return view('usuario/cadastro_usuario');
     }
 
     function cadastrarUsuario(Request $req)

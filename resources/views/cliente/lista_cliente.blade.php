@@ -51,7 +51,7 @@
 
     <script>
         function exclui(id) {
-            if (confirm('Deseja realmente excluir o usuário ?')) {
+            if (confirm('Deseja realmente excluir o cliente ?')) {
                 location.href ='/cliente/excluir/' + id;
             }else{
                 return true;
