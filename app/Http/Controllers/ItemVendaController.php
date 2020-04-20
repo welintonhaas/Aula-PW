@@ -51,9 +51,7 @@ class ItemVendaController extends Controller
         $venda = Venda::find($id);
         $subtotal = 0;
 
-
         foreach($venda->produtos as $vp){
-            dd($vp);
             if ($vp->id == $id_produto){
                 $subtotal = $vp->pivot->subtotal;
                 break;
