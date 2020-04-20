@@ -2,7 +2,7 @@
 
 @section('conteudo')
 
-    <div class="col-6 mx-auto">
+    <div class="col-12 col-sm-6 mx-auto">
 
         <!-- Título -->
         <h1 class="display-4 mt-5 mb-3">Cadastrar Usuário</h1>

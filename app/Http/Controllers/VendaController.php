@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Cliente\Cliente;
-use App\Usuario\Usuario;
 use Illuminate\Http\Request;
 use App\Venda\Venda;
 
@@ -48,7 +47,8 @@ class VendaController extends Controller
         }else{
             $msg = ['msg'=>'Venda não foi cadastrada', false];
         }
-        return $this->ListarVendas($msg);
+        return redirect()->route('cadastro_item_vend', ['id'=> $venda->id]);
+        //return (new ItemVendaController)->CadastroItem($venda->id);
     }
 
     function ListarVendas($msg = null){
@@ -57,11 +57,6 @@ class VendaController extends Controller
         $clientes = Cliente::All();
 
         return view('venda/lista_venda',['vendas'=> $vendas, 'clientes'=> $clientes, 'msg'=> $msg]);
-    }
-
-    function alteraVenda($id){
-        $venda = Venda::find($id);
-        return view('venda/altera_venda',['cli' => $venda]);
     }
 
     function excluirVenda($id)
@@ -74,4 +69,5 @@ class VendaController extends Controller
         }
         return $this->ListarVendas($msg);
     }
+
 }

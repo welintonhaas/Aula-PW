@@ -20,7 +20,6 @@ class CreateTableClientes extends Migration
             $table->string('cep');
             $table->string('cidade');
             $table->string('estado');
-            #$table->foreign('estado')->references('id')->on('estados');
             $table->timestamps();
         });
     }

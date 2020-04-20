@@ -29,13 +29,21 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ @route('cad_usuario') }}"><i class="fas fa-user-plus  text-success"></i> Usuários</a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link">|</a></li>
+                            <li class="nav-item d-none d-sm-block"> <a class="nav-link">|</a></li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ @route('listar_cli') }}"><i class="fas fa-user-astronaut  text-success"></i> Clientes</a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link">|</a></li>
+                            <li class="nav-item d-none d-sm-block"> <a class="nav-link">|</a></li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ @route('listar_vend') }}"><i class="fas fa-funnel-dollar text-success"></i> Vendas</a>
+                            </li>
+                            <li class="nav-item d-none d-sm-block"> <a class="nav-link">|</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ @route('listar_prod') }}"><i class="fab fa-xbox text-success"></i> Produtos</a>
+                            </li>
+                            <li class="nav-item d-none d-sm-block"> <a class="nav-link">|</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ @route('listar_tipo') }}"><i class="fas fa-boxes text-success"></i> Tipo de Produto</a>
                             </li>
 
 
