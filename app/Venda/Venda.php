@@ -9,7 +9,7 @@ class Venda extends Model
     protected $table = 'vendas';
     protected $primaryKey = 'id';
 
-    function usuario()
+    function cliente()
     {
         return $this->belongsTo('App\Cliente\Cliente', 'id_cliente', 'id');
     }
@@ -21,4 +21,5 @@ class Venda extends Model
             ->withPivot(['id','quantidade','subtotal'])
             ->withTimestamps();
     }
+
 }

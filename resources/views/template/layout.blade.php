@@ -26,10 +26,7 @@
                     <!-- Links -->
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ @route('cad_usuario') }}"><i class="fas fa-user-plus  text-success"></i> Usuários</a>
-                            </li>
-                            <li class="nav-item d-none d-sm-block"> <a class="nav-link">|</a></li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ @route('listar_cli') }}"><i class="fas fa-user-astronaut  text-success"></i> Clientes</a>
                             </li>
@@ -51,10 +48,10 @@
 
                     </div>
                     <ul class="nav navbar-nav navbar-right">
-                        @if (session()->has('login'))
-                            <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"><i class="fas fa-sign-in-alt"></i> Logout</a></li>
+                        @if (Auth::check())
+                            <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"><i class="fas fa-sign-in-alt"></i> Sair</a></li>
                         @else
-                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-user"></i> Logar</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-user"></i> Entrar</a></li>
                         @endif
                     </ul>
 

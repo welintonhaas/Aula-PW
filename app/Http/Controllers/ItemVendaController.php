@@ -51,13 +51,7 @@ class ItemVendaController extends Controller
         $venda = Venda::find($id);
         $subtotal = 0;
 
-        foreach($venda->produtos as $vp){
-
-            if ($vp->pivot->id == $id_produto){
-                $subtotal = $vp->pivot->subtotal;
-                break;
-            }
-        }
+        $subtotal = $venda->produtos()->wherePivot('id', '=', $id_produto)->first()->pivot->subtotal;
 
         $venda->valor = $venda->valor - $subtotal;
         $venda->produtos()->wherePivot('id', '=', $id_produto)->detach();
